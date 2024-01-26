@@ -593,12 +593,8 @@ try {
 
   self.importScripts(
     process.env.NODE_ENV === 'development'
-      ? `${
-          process.env.CODESANDBOX_HOST || ''
-        }/static/js/babel.${BABEL7_VERSION}.js`
-      : `${
-          process.env.CODESANDBOX_HOST || ''
-        }/static/js/babel.${BABEL7_VERSION}.min.js`
+      ? `${process.env.CODESANDBOX_HOST || '.'}/static/js/babel.${BABEL7_VERSION}.js`
+      : `${process.env.CODESANDBOX_HOST || '.'}/static/js/babel.${BABEL7_VERSION}.min.js`
   );
 
   remapBabelHack();
@@ -641,9 +637,7 @@ async function initBabel(opts) {
   if (babelUrl || babelEnvUrl) {
     loadCustomTranspiler(babelUrl, babelEnvUrl);
   } else if (version !== 7) {
-    loadCustomTranspiler(
-      `${process.env.CODESANDBOX_HOST || ''}/static/js/babel.6.26.min.js`
-    );
+    loadCustomTranspiler(`${process.env.CODESANDBOX_HOST || '.'}/static/js/babel.6.26.min.js`);
   }
 
   const stringifiedConfig = JSON.stringify(babelTranspilerOptions);

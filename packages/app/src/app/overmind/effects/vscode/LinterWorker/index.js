@@ -12,9 +12,7 @@ function isMinimalSemverVersion(versionOrRange, minimalVersion) {
   }
 }
 
-self.importScripts(
-  `${process.env.CODESANDBOX_HOST}/static/browserfs12/browserfs.min.js`
-);
+self.importScripts(`${process.env.CODESANDBOX_HOST || '.'}/static/browserfs12/browserfs.min.js`);
 
 // To make the parser of typescript work
 process.versions.node = '10.10.0';

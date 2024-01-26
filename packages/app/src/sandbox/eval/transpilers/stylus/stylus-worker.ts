@@ -2,9 +2,7 @@ import { ChildHandler } from '../worker-transpiler/child-handler';
 
 const childHandler = new ChildHandler('stylus-worker');
 
-self.importScripts(
-  `${process.env.CODESANDBOX_HOST || ''}/static/js/stylus.min.js`
-);
+self.importScripts(`${process.env.CODESANDBOX_HOST || '.'}/static/js/stylus.min.js`);
 
 declare const stylus: {
   render: (

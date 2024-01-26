@@ -1,10 +1,6 @@
 import { ChildHandler } from '../worker-transpiler/child-handler';
 
-self.importScripts(
-  `${
-    process.env.CODESANDBOX_HOST || ''
-  }/static/js/browserified-pug.0.1.0.min.js`
-);
+self.importScripts(`${process.env.CODESANDBOX_HOST || '.'}/static/js/browserified-pug.0.1.0.min.js`);
 
 const childHandler = new ChildHandler('pug-worker');
 

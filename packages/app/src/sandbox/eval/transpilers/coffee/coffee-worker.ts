@@ -2,9 +2,7 @@ import { ChildHandler } from '../worker-transpiler/child-handler';
 
 const childHandler = new ChildHandler('coffee-worker');
 
-self.importScripts(
-  `${process.env.CODESANDBOX_HOST || ''}/static/js/coffeescript.2.3.2.js`
-);
+self.importScripts(`${process.env.CODESANDBOX_HOST || '.'}/static/js/coffeescript.2.3.2.js`);
 
 async function workerCompile(opts) {
   const { code, path } = opts;

@@ -462,8 +462,7 @@ export default function(isVSCode: boolean, requiredModule?: string[]) {
     return resolvedPath;
   };
   Component.prototype.generateLoaderConfig = function(dest) {
-    dest[this.modulePrefix] =
-      process.env.CODESANDBOX_HOST + this.getResolvedPath();
+    dest[this.modulePrefix] = process.env.CODESANDBOX_HOST || '.' + this.getResolvedPath();
   };
   Component.prototype.generateUrlForPath = function(pathName) {
     var NEW_LOADER_OPTS = {};
