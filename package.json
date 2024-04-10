@@ -115,9 +115,6 @@
       "pretty-quick --staged"
     ]
   },
-  "engines": {
-    "node": "^16.0.0"
-  },
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/codesandbox",
